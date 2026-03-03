@@ -25,7 +25,7 @@ app.use(cors({
     'http://localhost:56361',
     'http://127.0.0.1:52949',
     'http://localhost:52949',
-    'https://inventario-app.netlify.app'
+    'https://inventariosoportetecnico.netlify.app'
   ],
   credentials: true
 }));
