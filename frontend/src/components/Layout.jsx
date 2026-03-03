@@ -34,11 +34,11 @@ export default function Layout({ children }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-dark">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Mobile sidebar */}
       <div className={`fixed inset-0 z-50 lg:hidden ${sidebarOpen ? 'block' : 'hidden'}`}>
-        <div className="fixed inset-0 bg-gray-600 dark:bg-dark bg-opacity-75" onClick={() => setSidebarOpen(false)} />
-        <div className="fixed inset-y-0 left-0 flex flex-col w-64 bg-white dark:bg-dark-secondary">
+        <div className="fixed inset-0 bg-gray-600 dark:bg-gray-800 bg-opacity-75" onClick={() => setSidebarOpen(false)} />
+        <div className="fixed inset-y-0 left-0 flex flex-col w-64 bg-white dark:bg-gray-800">
           <div className="flex items-center justify-between h-16 px-4 bg-primary-600">
             <h1 className="text-xl font-semibold text-white">Inventario</h1>
             <button
@@ -66,17 +66,17 @@ export default function Layout({ children }) {
             })}
           </nav>
 
-          <div className="p-4 border-t border-gray-200 dark:border-dark">
+          <div className="p-4 border-t border-gray-200 dark:border-gray-700">
             <div className="flex items-center mb-4">
-              <UserCircleIcon className="w-8 h-8 text-gray-400 dark:text-dark-textMuted mr-3" />
+              <UserCircleIcon className="w-8 h-8 text-gray-400 dark:text-gray-500 mr-3" />
               <div>
-                <p className="text-sm font-medium text-gray-900 dark:text-dark-text">{user?.nombre}</p>
-                <p className="text-xs text-gray-500 dark:text-dark-textMuted capitalize">{user?.rol}</p>
+                <p className="text-sm font-medium text-gray-900 dark:text-gray-100">{user?.nombre}</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 capitalize">{user?.rol}</p>
               </div>
             </div>
             <button
               onClick={handleLogout}
-              className="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-700 dark:text-dark-text rounded-lg hover:bg-gray-100 dark:hover-dark"
+              className="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover-gray-700"
             >
               <ArrowRightOnRectangleIcon className="w-5 h-5 mr-3" />
               Cerrar sesión
@@ -87,7 +87,7 @@ export default function Layout({ children }) {
 
       {/* Desktop sidebar */}
       <div className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col">
-        <div className="flex flex-col flex-1 bg-white dark:bg-dark-secondary border-r border-gray-200 dark:border-dark">
+        <div className="flex flex-col flex-1 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700">
           <div className="flex items-center justify-between h-16 px-6 bg-primary-600">
             <h1 className="text-xl font-semibold text-white">Sistema de Inventario</h1>
             <ThemeToggle />
@@ -109,17 +109,17 @@ export default function Layout({ children }) {
             })}
           </nav>
 
-          <div className="p-4 border-t border-gray-200 dark:border-dark">
+          <div className="p-4 border-t border-gray-200 dark:border-gray-700">
             <div className="flex items-center mb-4">
-              <UserCircleIcon className="w-8 h-8 text-gray-400 dark:text-dark-textMuted mr-3" />
+              <UserCircleIcon className="w-8 h-8 text-gray-400 dark:text-gray-500 mr-3" />
               <div>
-                <p className="text-sm font-medium text-gray-900 dark:text-dark-text">{user?.nombre}</p>
-                <p className="text-xs text-gray-500 dark:text-dark-textMuted capitalize">{user?.rol}</p>
+                <p className="text-sm font-medium text-gray-900 dark:text-gray-100">{user?.nombre}</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 capitalize">{user?.rol}</p>
               </div>
             </div>
             <button
               onClick={handleLogout}
-              className="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-700 dark:text-dark-text rounded-lg hover:bg-gray-100 dark:hover-dark"
+              className="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover-gray-700"
             >
               <ArrowRightOnRectangleIcon className="w-5 h-5 mr-3" />
               Cerrar sesión
@@ -131,15 +131,15 @@ export default function Layout({ children }) {
       {/* Main content */}
       <div className="lg:pl-64">
         {/* Top header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between h-16 bg-white dark:bg-dark-secondary border-b border-gray-200 dark:border-dark lg:hidden">
+        <div className="sticky top-0 z-10 flex items-center justify-between h-16 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 lg:hidden">
           <div className="flex items-center">
             <button
               onClick={() => setSidebarOpen(true)}
-              className="px-4 text-gray-500 dark:text-dark-textMuted hover:text-gray-700 dark:hover-dark-text"
+              className="px-4 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover-gray-300"
             >
               <Bars3Icon className="w-6 h-6" />
             </button>
-            <h1 className="text-lg font-semibold text-gray-900 dark:text-dark-text">Inventario</h1>
+            <h1 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Inventario</h1>
           </div>
           <div className="px-4">
             <ThemeToggle />
