@@ -24,7 +24,8 @@ app.use(cors({
     'http://127.0.0.1:56361',
     'http://localhost:56361',
     'http://127.0.0.1:52949',
-    'http://localhost:52949'
+    'http://localhost:52949',
+    'https://inventario-app.netlify.app'
   ],
   credentials: true
 }));
