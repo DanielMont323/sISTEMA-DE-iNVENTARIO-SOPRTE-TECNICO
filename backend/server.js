@@ -17,6 +17,36 @@ const app = express();
 
 // Security middleware
 app.use(helmet());
+
+// CORS con preflight handler
+app.use((req, res, next) => {
+  const allowedOrigins = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:56361',
+    'http://localhost:56361',
+    'http://127.0.0.1:52949',
+    'http://localhost:52949',
+    'https://inventariosoportetecnico.netlify.app'
+  ];
+  
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+    return;
+  }
+  
+  next();
+});
+
 app.use(cors({
   origin: [
     'http://localhost:3000',
