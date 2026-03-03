@@ -3,7 +3,7 @@
   command = "cd frontend && npm install && npm run build"
 
 [build.environment]
-  VITE_API_URL = "https://inventario-backend.onrender.com/api"
+  VITE_API_URL = "https://sistema-de-inventario-soprte-tecnico.onrender.com/api"
 
 [[redirects]]
   from = "/*"
