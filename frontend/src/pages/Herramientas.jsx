@@ -336,14 +336,14 @@ export default function Herramientas() {
         <table className="table">
           <thead>
             <tr>
-              <th className="table-header">Nombre</th>
-              <th className="table-header">Categoría</th>
-              <th className="table-header">Total</th>
-              <th className="table-header">Disponible</th>
-              <th className="table-header">En resguardo</th>
-              <th className="table-header">Mantenimiento</th>
-              <th className="table-header">Ubicación</th>
-              <th className="table-header text-right sticky right-0 bg-white shadow-[-8px_0_12px_-12px_rgba(0,0,0,0.25)]">Acciones</th>
+              <th className="table-header w-2/5">Nombre</th>
+              <th className="table-header w-1/6">Categoría</th>
+              <th className="table-header w-1/12">Total</th>
+              <th className="table-header w-1/12">Disponible</th>
+              <th className="table-header w-1/12">En resguardo</th>
+              <th className="table-header w-1/12">Mantenimiento</th>
+              <th className="table-header w-1/6">Ubicación</th>
+              <th className="table-header text-right sticky right-0 bg-white shadow-[-8px_0_12px_-12px_rgba(0,0,0,0.25)] w-32">Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -354,8 +354,8 @@ export default function Herramientas() {
             ) : (
               filtered.map((h) => (
                 <tr key={h._id} className="table-row">
-                  <td className="table-cell font-medium">{h.nombre}</td>
-                  <td className="table-cell">{h.categoria}</td>
+                  <td className="table-cell font-medium max-w-xs truncate" title={h.nombre}>{h.nombre}</td>
+                  <td className="table-cell max-w-xs truncate" title={h.categoria}>{h.categoria}</td>
                   <td className="table-cell">{h.cantidad_total ?? 0}</td>
                   <td className="table-cell">{h.cantidad_disponible ?? 0}</td>
                   <td className="table-cell">{h.cantidad_asignada ?? 0}</td>

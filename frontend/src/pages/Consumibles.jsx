@@ -288,13 +288,13 @@ export default function Consumibles() {
         <table className="table">
           <thead>
             <tr>
-              <th className="table-header">Nombre</th>
-              <th className="table-header">Categoría</th>
-              <th className="table-header">Unidad</th>
-              <th className="table-header">Stock</th>
-              <th className="table-header">Mínimo</th>
-              <th className="table-header">Ubicación</th>
-              <th className="table-header text-right sticky right-0 bg-white shadow-[-8px_0_12px_-12px_rgba(0,0,0,0.25)]">Acciones</th>
+              <th className="table-header w-2/5">Nombre</th>
+              <th className="table-header w-1/5">Categoría</th>
+              <th className="table-header w-1/12">Unidad</th>
+              <th className="table-header w-1/12">Stock</th>
+              <th className="table-header w-1/12">Mínimo</th>
+              <th className="table-header w-1/6">Ubicación</th>
+              <th className="table-header text-right sticky right-0 bg-white shadow-[-8px_0_12px_-12px_rgba(0,0,0,0.25)] w-32">Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -305,8 +305,8 @@ export default function Consumibles() {
             ) : (
               filtered.map((c) => (
                 <tr key={c._id} className="table-row">
-                  <td className="table-cell font-medium">{c.nombre}</td>
-                  <td className="table-cell">{c.categoria}</td>
+                  <td className="table-cell font-medium max-w-xs truncate" title={c.nombre}>{c.nombre}</td>
+                  <td className="table-cell max-w-xs truncate" title={c.categoria}>{c.categoria}</td>
                   <td className="table-cell">{c.unidad}</td>
                   <td className="table-cell">{c.stock_actual}</td>
                   <td className="table-cell">{c.stock_minimo}</td>
