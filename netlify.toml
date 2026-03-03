@@ -1,0 +1,11 @@
+[build]
+  publish = "frontend/dist"
+  command = "cd frontend && npm install && npm run build"
+
+[build.environment]
+  VITE_API_URL = "https://inventario-backend.onrender.com/api"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
