@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -58,6 +59,16 @@ export default {
           800: '#991b1b',
           900: '#7f1d1d',
           950: '#450a0a',
+        },
+        dark: {
+          bg: '#0f172a',
+          bgSecondary: '#1e293b',
+          bgTertiary: '#334155',
+          text: '#f1f5f9',
+          textSecondary: '#cbd5e1',
+          textMuted: '#94a3b8',
+          border: '#334155',
+          hover: '#1e293b',
         },
       },
       fontFamily: {
